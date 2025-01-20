@@ -34,4 +34,12 @@ class MainActivity : AppCompatActivity() {
         Log.i("LifeCycle", "MainActivityのonStartが実行")
         super.onStart()
     }
+
+    // Activityが前面に表示され、ユーザとやり取りが可能になる直前に実行される
+    // Activityがユーザに表示可能になる為に必要な処理をする(DB処理、必要な情報を画面にセットする)
+    // 割り込み処理の発生(アプリ表示中に電話がくるなど)してActivityが一時停止して、再開すると再びonResume()が実行される
+    override fun onResume() {
+        Log.i("LifeCycle", "MainActivityのonResumeが実行")
+        super.onResume()
+    }
 }
